@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Blog Site</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
 </head>
 <body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Blog Site </a>
+</nav>
+
+  <div class="container">
+      <h1>Spring Boot Blog Application</h1>
+    <hr/>
+
+    <div class="posts-container">
+      <div class="post" th:each="post : ${posts}">
+        <h2><a th:href="@{'/posts/' + ${post.id}}" th:text="${post.title}">Title</a> </h2>
+        <h5 th:text="'Published on' + ${post.createdAt}">Created At</h5>
+        <p th:text="${post.body}">Body Text</p>
+
+        <br/>
+
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
