@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Site</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Blog Registration Page </a>
+</nav>
+
+<div class="container">
+    <h1>Spring Boot Blog Application</h1>
+    <hr/>
+
+    <form action="#" th:action="@{/register}" th:object="userAccount" method="POST">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" th:field="*{firstName}" name="firstName" placeholder="Enter First Name"/>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" th:field="*{lastName}" name="lastName" placeholder="Enter Last Name"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="text" th:field="*{email}" name="email" placeholder="Enter Email"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" th:field="*{password}" name="password" placeholder="Enter Password"/>
+        </div>
+        <button type="submit">Register!</button>
+    </form>
+</div>
+
+</body>
+</html>
