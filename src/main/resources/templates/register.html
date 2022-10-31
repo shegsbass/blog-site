@@ -20,7 +20,7 @@
     <h1>Spring Boot Blog Application</h1>
     <hr/>
 
-    <form action="#" th:action="@{/register}" th:object="userAccount" method="POST">
+    <form action="#" th:action="@{/register}" th:object="${userAccount}" method="POST">
         <div class="form-group">
             <label for="firstName">First Name</label>
             <input id="firstName" type="text" th:field="*{firstName}" name="firstName" placeholder="Enter First Name"/>
