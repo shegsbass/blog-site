@@ -25,6 +25,6 @@ public class UserAccount {
 
     private String password;
 
-    @OneToMany(mappedBy = "useraccount")
+    @OneToMany(mappedBy = "userAccount")
     private List<Post> posts;
 }
