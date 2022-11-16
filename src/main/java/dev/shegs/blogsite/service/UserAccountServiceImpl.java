@@ -5,6 +5,8 @@ import dev.shegs.blogsite.repository.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserAccountServiceImpl implements UserAccountService{
 
@@ -15,4 +17,11 @@ public class UserAccountServiceImpl implements UserAccountService{
     public UserAccount saveUser(UserAccount userAccount) {
         return userAccountRepository.save(userAccount);
     }
+
+    @Override
+    public Optional<UserAccount> findOneByEmail(String email) {
+        return userAccountRepository.findOneByEmail(email);
+    }
+
+
 }
