@@ -18,16 +18,19 @@
 
 <div class="container">
     <h1>Spring Boot Blog Application</h1>
-    <hr/>
-
-    <form action="#" th:action="@{/login}" method="POST">
+    <hr />
+    <a th:href="@{/}">Home</a>
+    <h2>Login</h2>
+    <form action="#"
+          th:action="@{/login}"
+          method="POST">
         <div>
             <label for="email">Email</label>
-            <input id="email" type="text" name="email" placeholder="Enter Email"/>
+            <input id="email" type="text" name="email" placeholder="Email" />
         </div>
         <div>
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" placeholder="Enter Password"/>
+            <input id="password" type="password" name="password" placeholder="Password" />
         </div>
         <button type="submit">Login!</button>
     </form>
